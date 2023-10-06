@@ -49,7 +49,7 @@ public class LinkedList {
         node.next = null;
 
         if (index < 0 || index > listSize()){
-            System.out.println("Invalid index. Can't insert the element to given index.");
+            System.out.println("Invalid index.");
         } else {
             Node n = head;
             for (int i = 0; i < index - 1; i++){
@@ -64,10 +64,10 @@ public class LinkedList {
     // delete an element from the given index
     public void deleteList(int index){
         if (isListEmpty()){
-            System.out.println("List is empty. Can't delete an element from a empty list.");
+            System.out.println("List is empty.");
         } else {
             if (index < 0 || index > listSize()) {
-                System.out.println("Invalid index. Can't delete the element at given index.");
+                System.out.println("Invalid index.");
             } else if (index == 0) {
                 head = head.next;
             } else {

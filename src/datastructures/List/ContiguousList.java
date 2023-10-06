@@ -29,7 +29,7 @@ public class ContiguousList {
     // insert an element at the end of the list
     public void insertLast(int value){
         if (isListFull()) {
-            System.out.println("List is full. Can't insert an element to a full list.");
+            System.out.println("List is full.");
         } else {
             list[++position] = value;
         }
@@ -39,9 +39,9 @@ public class ContiguousList {
     public void insertList(int value, int index){
         int i;
         if (isListFull()){
-            System.out.println("List is full. Can't insert an element to a full list.");
+            System.out.println("List is full.");
         } else if (index < 0 || index > listSize()) {
-            System.out.println("Invalid index. Can't insert the element to given index.");
+            System.out.println("Invalid index.");
         } else {
             for (i = listSize(); i > index; i--) {
                 list[i] = list[i-1];
@@ -55,9 +55,9 @@ public class ContiguousList {
     public int deleteList(int index){
         int i, element;
         if (isListEmpty()){
-            System.out.println("List is empty. Can't delete an element from a empty list.");
+            System.out.println("List is empty.");
         } else if (index < 0 || index >= listSize()) {
-            System.out.println("Invalid index. Can't delete the element at given index.");
+            System.out.println("Invalid index.");
         } else {
             element = list[index];
             for (i = index; i < listSize() - 1; i++) {
@@ -73,9 +73,9 @@ public class ContiguousList {
     public int retrieveList(int index){
         int element;
         if (isListEmpty()){
-            System.out.println("List is empty. Can't retrieve an element from a empty list.");
+            System.out.println("List is empty.");
         } else if (index < 0 || index >= listSize()) {
-            System.out.println("Invalid index. Can't delete the element at given index.");
+            System.out.println("Invalid index.");
         } else {
             element = list[index];
             return element;
