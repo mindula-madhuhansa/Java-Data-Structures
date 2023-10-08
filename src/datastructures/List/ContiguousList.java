@@ -86,9 +86,9 @@ public class ContiguousList {
     // replace an element in the list with a given index and the value
     public void replaceList(int index, int value){
         if (isListEmpty()){
-            System.out.println("List is empty. Can't replace an element from a empty list.");
+            System.out.println("List is empty.");
         } else if (index < 0 || index >= listSize()){
-            System.out.println("Invalid index. Can't replace the element at given index.");
+            System.out.println("Invalid index.");
         } else {
             list[index] = value;
         }
@@ -97,8 +97,72 @@ public class ContiguousList {
     // print all elements in the list
     public void traversalList(){
         int i;
-        for (i = 0; i < position - 1 ; i++) {
-            System.out.println(list[i]);
+        for (i = 0; i < listSize() ; i++) {
+            System.out.print(list[i] + " ");
         }
+    }
+
+    // insertion sort
+    public void insertionSort(){
+        for (int i = 1; i < listSize(); i++){
+            int temp = list[i];
+            int j = i - 1;
+
+            while (j >= 0 && list[j] > temp){
+                list[j + 1] = list[j];
+                j--;
+            }
+            list[j + 1] = temp;
+        }
+    }
+
+    // selection sort
+    public void selectionSort(){
+        for (int i = 0; i < listSize() - 1; i++) {
+            int min = i;
+            for (int j = i; j < listSize(); j++) {
+                if (list[min] > list[j]){
+                    min = j;
+                }
+            }
+            int temp = list[i];
+            list[i] = list[min];
+            list[min] = temp;
+        }
+    }
+
+    // bubble sort
+    public void bubbleSort(){
+        for (int i = 0; i < listSize() - 1; i++) {
+            for (int j = 0; j < listSize() - i - 1; j++) {
+                if (list[j] > list[j + 1]){
+                    int temp = list[j];
+                    list[j] = list[j + 1];
+                    list[j + 1] = temp;
+                }
+            }
+        }
+    }
+
+    // binary search
+    public int binarySearch(int key){
+        int low = 0;
+        int high = listSize() - 1;
+
+        while (low <= high){
+            int middle = (low + high) / 2;
+            int value = list[middle];
+
+            System.out.println("middle: " + value);
+
+            if (value < key){
+                low = middle + 1;
+            } else if (value > key){
+                high = middle - 1;
+            } else {
+                return middle;
+            }
+        }
+        return -1;
     }
 }
