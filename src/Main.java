@@ -1,27 +1,26 @@
+import binary_search_tree.BinarySearchTree;
+import binary_search_tree.Node;
 import datastructures.List.ContiguousList;
 
 public class Main {
     public static void main(String[] args) {
-        ContiguousList list = new ContiguousList(9);
+        BinarySearchTree tree = new BinarySearchTree();
 
-        list.insertList(9, 0);
-        list.insertList(1, 1);
-        list.insertList(8, 2);
-        list.insertList(2, 3);
-        list.insertList(7, 4);
-        list.insertList(3, 5);
-        list.insertList(6, 6);
-        list.insertList(4, 7);
-        list.insertList(5, 8);
-        list.traversalList();
+        tree.insert(new Node(45));
+        tree.insert(new Node(15));
+        tree.insert(new Node(79));
+        tree.insert(new Node(90));
+        tree.insert(new Node(10));
+        tree.insert(new Node(55));
+        tree.insert(new Node(12));
+        tree.insert(new Node(20));
+        tree.insert(new Node(50));
+
+        tree.preorder();
         System.out.println();
-//        list.insertionSort();
-//        list.selectionSort();
-        list.bubbleSort();
-
-        int index = list.binarySearch(5);
-        System.out.println("at: " + index);
-        list.traversalList();
-
+        tree.inorder();
+        System.out.println();
+        tree.postorder();
+        System.out.println();
     }
 }
